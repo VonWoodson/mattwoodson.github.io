@@ -1,0 +1,721 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="Matthew D. Woodson — AI/ML software engineer specializing in data engineering, embedded systems, ADAS, robotics, and machine learning."
+    >
+    <meta name="theme-color" content="#0b1117">
+    <title>Matthew D. Woodson | AI/ML Software Engineer</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        --ink: #edf2f7;
+        --muted: #a6b3c0;
+        --accent: #ffad91;
+        --accent-dark: #ffc0aa;
+        --line: #2b3947;
+        --paper: #131c25;
+        --canvas: #0b1117;
+        --intro: #d0d9e2;
+        --page-border: #263441;
+        --page-shadow: 0 18px 55px rgb(0 0 0 / 28%);
+        --hero-background:
+          radial-gradient(ellipse at 92% 10%, rgb(255 130 96 / 12%), transparent 34%),
+          linear-gradient(135deg, #151f29 15%, #19232d 100%);
+        --button-background: #a94228;
+        --button-hover: #87331e;
+        --focus: #ffad91;
+        --max-width: 1040px;
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        background: var(--canvas);
+        color: var(--ink);
+        font-family:
+          Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", sans-serif;
+        font-size: 16px;
+        line-height: 1.65;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      a {
+        color: var(--accent-dark);
+        text-decoration-thickness: 1px;
+        text-underline-offset: 3px;
+      }
+
+      a:hover {
+        color: #ffd1c2;
+      }
+
+      a:focus-visible {
+        border-radius: 3px;
+        outline: 3px solid var(--focus);
+        outline-offset: 3px;
+      }
+
+      .skip-link {
+        position: absolute;
+        top: 0.75rem;
+        left: 0.75rem;
+        z-index: 1;
+        padding: 0.6rem 0.9rem;
+        transform: translateY(-180%);
+        border-radius: 6px;
+        background: var(--ink);
+        color: white;
+      }
+
+      .skip-link:focus {
+        transform: translateY(0);
+      }
+
+      .page {
+        width: min(var(--max-width), calc(100% - 3rem));
+        margin: 3rem auto;
+        overflow: hidden;
+        border: 1px solid var(--page-border);
+        border-radius: 16px;
+        background: var(--paper);
+        box-shadow: var(--page-shadow);
+      }
+
+      .hero {
+        position: relative;
+        padding: clamp(2rem, 7vw, 5rem);
+        background: var(--hero-background);
+      }
+
+      .eyebrow {
+        margin: 0 0 0.65rem;
+        color: var(--accent-dark);
+        font-size: 0.76rem;
+        font-weight: 750;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin-top: 0;
+      }
+
+      h1 {
+        max-width: 760px;
+        margin-bottom: 0.35rem;
+        font-size: clamp(2.6rem, 8vw, 5rem);
+        letter-spacing: -0.065em;
+        line-height: 1.02;
+      }
+
+      .headline {
+        margin-bottom: 1.35rem;
+        color: var(--muted);
+        font-size: clamp(1rem, 2.4vw, 1.3rem);
+        font-weight: 550;
+      }
+
+      .contact {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.45rem 1.3rem;
+        margin: 0 0 1.75rem;
+        padding: 0;
+        color: var(--muted);
+        list-style: none;
+      }
+
+      .contact li {
+        white-space: nowrap;
+      }
+
+      .contact a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .contact a:hover {
+        color: #ffd1c2;
+        text-decoration: underline;
+      }
+
+      .intro {
+        max-width: 760px;
+        margin-bottom: 1.7rem;
+        color: var(--intro);
+        font-size: 1.05rem;
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0.85rem 1.2rem;
+      }
+
+      .button {
+        display: inline-flex;
+        min-height: 44px;
+        align-items: center;
+        justify-content: center;
+        padding: 0.65rem 1rem;
+        border: 1px solid var(--button-background);
+        border-radius: 7px;
+        background: var(--button-background);
+        color: white;
+        font-size: 0.92rem;
+        font-weight: 700;
+        text-decoration: none;
+        transition: background-color 140ms ease, transform 140ms ease;
+      }
+
+      .button:hover {
+        transform: translateY(-1px);
+        background: var(--button-hover);
+        color: white;
+      }
+
+      .text-link {
+        font-weight: 650;
+      }
+
+      .content {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(260px, 0.34fr);
+        gap: clamp(2rem, 6vw, 4.5rem);
+        padding: clamp(2rem, 6vw, 4.25rem);
+      }
+
+      .main-column,
+      .side-column {
+        min-width: 0;
+      }
+
+      .section + .section {
+        margin-top: 3rem;
+      }
+
+      .section-heading {
+        display: flex;
+        align-items: baseline;
+        gap: 0.75rem;
+        margin: 0 0 1.4rem;
+        font-size: 1.45rem;
+        letter-spacing: -0.035em;
+      }
+
+      .section-heading::after {
+        height: 1px;
+        flex: 1;
+        background: var(--line);
+        content: "";
+      }
+
+      .job {
+        position: relative;
+        padding: 0 0 2rem 1.2rem;
+        border-left: 1px solid var(--line);
+      }
+
+      .job:last-child {
+        padding-bottom: 0;
+        border-left-color: transparent;
+      }
+
+      .job::before {
+        position: absolute;
+        top: 0.45rem;
+        left: -5px;
+        width: 9px;
+        height: 9px;
+        border: 2px solid var(--paper);
+        border-radius: 50%;
+        background: var(--accent);
+        box-shadow: 0 0 0 1px var(--accent);
+        content: "";
+      }
+
+      .employer {
+        margin: 0;
+        font-size: 1.13rem;
+        font-weight: 760;
+        letter-spacing: -0.02em;
+      }
+
+      .role {
+        margin: 0.1rem 0 0;
+        font-weight: 650;
+      }
+
+      .dates {
+        margin: 0.15rem 0 0.8rem;
+        color: var(--muted);
+        font-size: 0.88rem;
+      }
+
+      .job ul,
+      .volunteer ul {
+        margin: 0;
+        padding-left: 1.15rem;
+        color: var(--intro);
+      }
+
+      .job li + li,
+      .volunteer li + li {
+        margin-top: 0.38rem;
+      }
+
+      .skill-group + .skill-group {
+        margin-top: 1.25rem;
+      }
+
+      .skill-group h3 {
+        margin-bottom: 0.3rem;
+        font-size: 0.92rem;
+        letter-spacing: -0.01em;
+      }
+
+      .skill-group p {
+        margin-bottom: 0;
+        color: var(--muted);
+        font-size: 0.91rem;
+        line-height: 1.65;
+      }
+
+      .side-section + .side-section {
+        margin-top: 2.2rem;
+      }
+
+      .education-item + .education-item,
+      .volunteer-item + .volunteer-item {
+        margin-top: 1.2rem;
+      }
+
+      .education-item h3,
+      .volunteer-item h3 {
+        margin-bottom: 0.15rem;
+        font-size: 1rem;
+        line-height: 1.4;
+      }
+
+      .education-item p,
+      .volunteer-item p {
+        margin-bottom: 0;
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+
+      .volunteer-item .dates {
+        margin-bottom: 0.4rem;
+      }
+
+      .volunteer ul {
+        padding-left: 1rem;
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+
+      footer {
+        padding: 1.25rem clamp(2rem, 6vw, 4.25rem);
+        border-top: 1px solid var(--line);
+        color: var(--muted);
+        font-size: 0.84rem;
+        text-align: center;
+      }
+
+      @media (max-width: 760px) {
+        .page {
+          width: min(100% - 1.25rem, var(--max-width));
+          margin: 0.625rem auto;
+          border-radius: 11px;
+        }
+
+        .content {
+          grid-template-columns: 1fr;
+        }
+
+        .side-column {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+          gap: 2rem;
+          padding-top: 2rem;
+          border-top: 1px solid var(--line);
+        }
+
+        .side-section + .side-section {
+          margin-top: 0;
+        }
+      }
+
+      @media (max-width: 420px) {
+        .page {
+          width: 100%;
+          margin: 0;
+          border: 0;
+          border-radius: 0;
+        }
+
+        .contact {
+          flex-direction: column;
+          gap: 0.25rem;
+        }
+
+        .job {
+          padding-left: 0.9rem;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          scroll-behavior: auto !important;
+          transition-duration: 0.01ms !important;
+        }
+      }
+
+      @media print {
+        :root {
+          color-scheme: light;
+          --ink: #17212b;
+          --muted: #596675;
+          --accent: #bd4d2b;
+          --accent-dark: #96391e;
+          --line: #dedbd4;
+          --paper: white;
+          --canvas: white;
+          --intro: #384554;
+          --page-border: transparent;
+          --page-shadow: none;
+          --hero-background: white;
+          --button-background: #96391e;
+          --button-hover: #7e2e19;
+          --focus: #96391e;
+        }
+
+        body {
+          font-size: 10pt;
+        }
+
+        .page {
+          width: 100%;
+          margin: 0;
+          border: 0;
+          border-radius: 0;
+          box-shadow: none;
+        }
+
+        .hero,
+        .content {
+          padding: 0.35in;
+        }
+
+        .hero {
+          background: var(--hero-background);
+        }
+
+        .hero-actions,
+        .skip-link {
+          display: none;
+        }
+
+        .content {
+          grid-template-columns: minmax(0, 1fr) minmax(220px, 0.34fr);
+          gap: 0.35in;
+        }
+
+        .section + .section {
+          margin-top: 1.6rem;
+        }
+
+        .job {
+          break-inside: avoid;
+        }
+
+        a {
+          color: inherit;
+        }
+
+        footer {
+          padding: 0.15in;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to resume</a>
+    <div class="page">
+      <header class="hero">
+        <p class="eyebrow">Resume</p>
+        <h1>Matthew D. Woodson</h1>
+        <p class="headline">AI/ML Software Engineer</p>
+        <ul class="contact" aria-label="Contact information">
+          <li><a href="mailto:matthew.d.woodson@gmail.com">matthew.d.woodson@gmail.com</a></li>
+          <li><a href="tel:+15867036823">+1 586-703-6823</a></li>
+        </ul>
+        <p class="intro">
+          AI/ML Software Engineer with 12+ years developing embedded systems all the way to
+          agentic AI data pipelines. Demonstrated ability to lead engineering teams and deliver
+          software and systems that directly address core user and stakeholder needs. Expertise
+          spans MLOps, data warehousing, data processing pipelines, LLM/AI-agent powered data
+          analysis, and evaluation systems.
+        </p>
+        <div class="hero-actions">
+          <a class="button" href="./Matthew%20Woodson%20Resume%20Oct2026.pdf" download>
+            Download PDF
+          </a>
+          <a class="text-link" href="mailto:matthew.d.woodson@gmail.com">Get in touch</a>
+        </div>
+      </header>
+
+      <main class="content" id="main">
+        <div class="main-column">
+          <section class="section" aria-labelledby="experience-heading">
+            <h2 class="section-heading" id="experience-heading">Experience</h2>
+
+            <article class="job">
+              <h3 class="employer">Ford Motor Company</h3>
+              <p class="role">Senior AI/ML Engineer</p>
+              <p class="dates"><time datetime="2025-05">May 2025</time> – Present</p>
+              <ul>
+                <li>
+                  Architected and currently deploying AI agents to triage BlueCruise autonomous
+                  driving events. Developed custom tools for the agent, including mapping tools,
+                  GIS queries, data extraction tools, and deterministic event analysis tools to
+                  increase accuracy.
+                </li>
+                <li>
+                  Develop agentic and LLM output evaluations to improve accuracy of data analysis
+                  and detect hallucinations.
+                </li>
+                <li>
+                  Extensively evaluated Vision-language models such as Nvidia Cosmos and Google
+                  Gemma for automotive applications.
+                </li>
+                <li>
+                  Engineered an evaluation framework for the agent pipeline and developed detailed,
+                  helpful reporting formats and insights.
+                </li>
+                <li>
+                  Built, prompt engineered, and deployed an LLM-based warranty claim analysis tool
+                  that determines with high accuracy the category of a repair, the root cause, and
+                  the action that fixed the issue.
+                </li>
+                <li>
+                  Developed a Streamlit dashboard that allows users to drill into various
+                  categories, root causes, and actions taken across warranty claims.
+                </li>
+                <li>
+                  Sandboxed a RAG-based Q&amp;A system utilizing documents, warranty claims,
+                  semantic embedding, and vector search to help users gain new insight into
+                  warranty data.
+                </li>
+                <li>
+                  Developed a pilot Neo4j graph database to map complex relationships between
+                  vehicle build options, Diagnostic Trouble Codes (DTCs), and warranty claims.
+                </li>
+                <li>
+                  Engineered an LLM interface that converts natural language questions into
+                  Cypher/SQL queries, enabling management to identify part failures, repair
+                  procedures, and time-in-service trends.
+                </li>
+                <li>
+                  Maintain CI/CD pipeline and consistently improve AI tools in code development
+                  and review.
+                </li>
+                <li>
+                  Developed data warehousing strategies and connected multi-modal models and data
+                  together.
+                </li>
+              </ul>
+            </article>
+
+            <article class="job">
+              <h3 class="employer">Ford Motor Company</h3>
+              <p class="role">Senior Machine Learning Infrastructure Engineer</p>
+              <p class="dates">
+                <time datetime="2023-10">Oct 2023</time> – <time datetime="2025-05">May 2025</time>
+              </p>
+              <ul>
+                <li>SAFe-trained scrum lead and individual contributor for a team of 7 people.</li>
+                <li>Engineered data aggregation methods for training Birds Eye View surround perception models.</li>
+                <li>
+                  Contributed to data warehousing, classification, and visibility of model training
+                  data utilizing technologies such as ROS, Google BigQuery, Apache Airflow, and
+                  Apache Superset.
+                </li>
+                <li>
+                  Architected an end-to-end algorithm simulation environment to process vehicle
+                  logged data through BEV perception models and downstream to upcoming ADAS safety
+                  features, honing precision and recall before test vehicles were ready.
+                </li>
+                <li>
+                  Co-designed an image degradation model training and evaluation pipeline to
+                  detect dirt or other camera obstructions, including creating a new ontology of
+                  camera obstructions and reduced-visibility environmental conditions.
+                </li>
+                <li>
+                  Scaled model evaluation pipelines utilizing Ray multiprocessing in
+                  High-Performance Computing (HPC) environments to handle large-scale concurrent
+                  data analysis.
+                </li>
+                <li>Debugged, trained, and evaluated image-based trailer detection neural network models.</li>
+              </ul>
+            </article>
+
+            <article class="job">
+              <h3 class="employer">Ford Motor Company</h3>
+              <p class="role">ADAS Algorithm Engineer</p>
+              <p class="dates">
+                <time datetime="2020-04">Apr 2020</time> – <time datetime="2023-10">Oct 2023</time>
+              </p>
+              <ul>
+                <li>Productionized a first-of-its-kind Pro Trailer Hitch Assist ADAS feature on multiple Ford vehicles.</li>
+                <li>
+                  Owned and refined radar-based “Movable Occupancy Grid Map” and “Trailer
+                  Detector” C++ algorithms, ensuring accuracy, requirements, and unit tests
+                  consistently met high standards.
+                </li>
+                <li>Co-owned the Extended Kalman Filter Sensor Fusion C++ algorithm, the core of Pro Trailer Hitch Assist.</li>
+                <li>
+                  Conducted rigorous in-vehicle testing, data collection, bench testing, and
+                  ADAS module-level debugging running the QNX operating system.
+                </li>
+                <li>
+                  Engineered a suite of vehicle data processing, algorithm output visualization,
+                  and GPS-based ground-truthing tools to speed up the vehicle testing-to-algorithm
+                  sign-off iterative loop.
+                </li>
+                <li>Explored ways to accelerate algorithm performance on ECU using DSPs and new libraries.</li>
+              </ul>
+            </article>
+
+            <article class="job">
+              <h3 class="employer">General Motors</h3>
+              <p class="role">Software Algorithm Engineer</p>
+              <p class="dates">
+                <time datetime="2017-09">Sep 2017</time> – <time datetime="2019-11">Nov 2019</time>
+              </p>
+              <ul>
+                <li>Designed C and MATLAB Simulink software for engine cooling components across vehicle lines and technologies.</li>
+                <li>Worked within AUTOSAR / ISO 26262 / MISRA standards.</li>
+                <li>Utilized INCA and VehicleSpy tools for in-vehicle software testing and debugging.</li>
+                <li>Executed HIL (hardware-in-the-loop) bench software testing of new software.</li>
+                <li>Created virtual unit tests for complete logic branching coverage.</li>
+                <li>Authored fan performance and temperature sensor diagnostics meeting OBD-II compliance.</li>
+                <li>Improved embedded software cybersecurity and robustness to loss of communication.</li>
+                <li>Reconstructed vehicle issues using data logs and custom plots to root cause issues.</li>
+                <li>
+                  Proposed and implemented a project to convert MATLAB Simulink models to
+                  human-maintained C code, saving 30–50% of time needed for each change request.
+                </li>
+                <li>Collaborated across multidisciplinary teams, coordinating changes and knowledge sharing.</li>
+              </ul>
+            </article>
+
+            <article class="job">
+              <h3 class="employer">FANUC America</h3>
+              <p class="role">Software Development Engineer</p>
+              <p class="dates">
+                <time datetime="2013-08">Aug 2013</time> – <time datetime="2017-01">Jan 2017</time>
+              </p>
+              <ul>
+                <li>Developed C software for an embedded robot controller system.</li>
+                <li>Enhanced robot UI by coding multilingual features and new convenience menu options.</li>
+                <li>Performed root cause analysis and remediation for bug reports using register dumps, call stacks, and diagnostic logs.</li>
+                <li>Maintained software build and release server and scripts.</li>
+                <li>Completed Auto Backward Exit software feature for greatly enhanced robot error recovery.</li>
+                <li>Programmed robot motion, safety zones, and IO in multi-robot manufacturing cells.</li>
+                <li>Trained FANUC’s iRVision system to locate parts for pickup or perform inspections.</li>
+              </ul>
+              <p class="dates">Formerly FANUC Robotics</p>
+            </article>
+          </section>
+        </div>
+
+        <aside class="side-column" aria-label="Additional resume information">
+          <section class="side-section" aria-labelledby="skills-heading">
+            <h2 class="section-heading" id="skills-heading">Skills &amp; Technologies</h2>
+            <div class="skill-group">
+              <h3>Languages</h3>
+              <p>Python (Pandas, NumPy), C++, C, SQL, Cypher, Bash, MATLAB</p>
+            </div>
+            <div class="skill-group">
+              <h3>AI, ML &amp; Data Engineering</h3>
+              <p>
+                LangChain/LangGraph, Agentic Workflows, Vision-Language Models, RAG, Neo4j,
+                Google BigQuery, Apache Airflow &amp; Superset, OpenCV, Streamlit
+              </p>
+            </div>
+            <div class="skill-group">
+              <h3>Cloud, DevOps &amp; Infrastructure</h3>
+              <p>Docker, Kubernetes, Jenkins, GitHub Actions, Ray, High-Performance Computing (HPC), Linux</p>
+            </div>
+            <div class="skill-group">
+              <h3>Automotive &amp; Systems Engineering</h3>
+              <p>
+                AUTOSAR, ISO 26262, MISRA, CAN, ROS, ADAS Perception Models, EKF Sensor Fusion,
+                Occupancy Grids, Embedded Architectures
+              </p>
+            </div>
+          </section>
+
+          <section class="side-section" aria-labelledby="education-heading">
+            <h2 class="section-heading" id="education-heading">Education</h2>
+            <div class="education-item">
+              <h3>Georgia Institute of Technology</h3>
+              <p>Master of Science coursework: CS-7641 Machine Learning, CS-6200 Operating Systems</p>
+            </div>
+            <div class="education-item">
+              <h3>Kettering University</h3>
+              <p>Bachelor of Science in Computer Engineering</p>
+            </div>
+          </section>
+
+          <section class="side-section" aria-labelledby="volunteer-heading">
+            <h2 class="section-heading" id="volunteer-heading">Volunteer Activities</h2>
+            <div class="volunteer-item">
+              <h3>Ford Pride ERG – People Pillar</h3>
+              <p class="dates">
+                <time datetime="2025-12">Dec 2025</time> – Present
+              </p>
+              <ul>
+                <li>Creating opportunities for connection globally for all regions of Ford Pride.</li>
+              </ul>
+            </div>
+            <div class="volunteer-item">
+              <h3>Billiards Commissioner – Stonewall Sports Detroit</h3>
+              <p class="dates">
+                <time datetime="2023-09">Sep 2023</time> – <time datetime="2026-01">Jan 2026</time>
+              </p>
+              <ul>
+                <li>Solo organizer and facilitator of a billiards league with 22 teams and 110 participants.</li>
+              </ul>
+            </div>
+          </section>
+        </aside>
+      </main>
+
+      <footer>
+        <p>Matthew D. Woodson · <a href="mailto:matthew.d.woodson@gmail.com">Get in touch</a></p>
+      </footer>
+    </div>
+  </body>
+</html>
